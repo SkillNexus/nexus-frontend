@@ -1,0 +1,56 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+src/
+├── assets/
+│   ├── images/
+│   └── icons/
+├── components/
+│   ├── common/
+│   │   ├── Layout/
+│   │   │   ├── Header.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── index.js
+│   │   ├── Navigation/
+│   │   │   ├── NavBar.jsx
+│   │   │   ├── MobileDrawer.jsx
+│   │   │   └── index.js
+│   │   └── UI/
+│   │       ├── Logo.jsx
+│   │       ├── LoadingSpinner.jsx
+│   │       └── index.js
+│   ├── landing/
+│   │   ├── HeroSection.jsx
+│   │   ├── HowItWorksSection.jsx
+│   │   ├── TestimonialsSection.jsx
+│   │   ├── CTASection.jsx
+│   │   └── index.js
+│   └── auth/
+│       ├── ProtectedRoute.jsx
+│       └── AuthButton.jsx
+├── hooks/
+│   ├── useAuth.js
+│   └── useResponsive.js
+├── layouts/
+│   ├── MainLayout.jsx
+│   ├── AuthLayout.jsx
+│   └── DashboardLayout.jsx
+├── pages/
+│   ├── Landing.jsx
+│   ├── Login.jsx
+│   ├── Signup.jsx
+│   └── Dashboard.jsx
+├── services/
+│   └── api.js
+├── store/
+│   ├── slices/
+│   │   └── authSlice.js
+│   └── store.js
+├── theme/
+│   ├── index.js
+│   └── palette.js
+├── utils/
+│   └── constants.js
+└── App.jsx
