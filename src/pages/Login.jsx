@@ -53,7 +53,7 @@ const Login = () => {
         onClick={handleLogin}
         sx={{ mb: 3 }}
       >
-        Se connecter avec Keycloak
+        Se connecter
       </Button>
 
       <Divider sx={{ width: "100%", my: 2 }}>OU</Divider>

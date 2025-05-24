@@ -51,7 +51,7 @@ const Signup = () => {
         onClick={handleSignup}
         sx={{ mb: 3 }}
       >
-        S'inscrire avec Keycloak
+        S'inscrire
       </Button>
 
       <Divider sx={{ width: "100%", my: 2 }}>OU</Divider>
