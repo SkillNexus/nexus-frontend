@@ -40,14 +40,14 @@ api.interceptors.response.use(
 
 // API methods
 export const userAPI = {
-  getProfile: () => api.get("/api/users/profile"),
-  updateProfile: (data) => api.put("/api/users/profile", data),
+  getProfile: () => api.get("/users/profile"),
+  updateProfile: (data) => api.put("/users/profile", data),
   getSkills: () => api.get("/users/skills"),
-  updateSkills: (skills) => api.put("/api/users/skills", { skills }),
-  getGoals: () => api.get("/api/users/goals"),
-  createGoal: (goal) => api.post("/api/users/goals", goal),
-  updateGoal: (id, goal) => api.put(`/api/users/goals/${id}`, goal),
-  deleteGoal: (id) => api.delete(`/api/users/goals/${id}`),
+  updateSkills: (skills) => api.put("/users/skills", { skills }),
+  getGoals: () => api.get("/users/goals"),
+  createGoal: (goal) => api.post("/users/goals", goal),
+  updateGoal: (id, goal) => api.put(`/users/goals/${id}`, goal),
+  deleteGoal: (id) => api.delete(`/users/goals/${id}`),
 };
 
 export const partnerAPI = {

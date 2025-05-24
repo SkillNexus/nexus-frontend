@@ -36,6 +36,33 @@ const StepAvatar = styled(Avatar)(({ theme }) => ({
   marginBottom: theme.spacing(3),
 }));
 
+const StepNumber = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: -28,
+  left: "50%",
+  transform: "translateX(-50%)",
+  width: 40,
+  height: 40,
+  borderRadius: "50%",
+  background: theme.palette.primary.dark,
+  color: "#fff",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontWeight: 700,
+  fontSize: 20,
+  boxShadow: theme.shadows[3],
+  zIndex: 2,
+}));
+
+const StepWrapper = styled(Box)(() => ({
+  position: "relative",
+  height: "100%",
+  display: "block",
+  alignItems: "center",
+  justifyContent: "flex-start",
+}));
+
 const steps = [
   {
     number: "1",
@@ -79,20 +106,35 @@ const HowItWorksSection = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          alignItems="flex-start"
+          sx={{ position: "relative" }}
+        >
           {steps.map((step) => (
-            <Grid item xs={12} md={4} key={step.number}>
-              <StepCard>
-                <CardContent sx={{ p: 4 }}>
-                  <StepAvatar>{step.icon}</StepAvatar>
-                  <Typography variant="h4" gutterBottom color="primary.dark">
-                    {step.title}
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    {step.description}
-                  </Typography>
-                </CardContent>
-              </StepCard>
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              key={step.number}
+              sx={{ position: "relative" }}
+            >
+              <StepWrapper>
+                <StepNumber>{step.number}</StepNumber>
+                <StepCard sx={{ mt: 3 }}>
+                  <CardContent sx={{ p: 4 }}>
+                    <StepAvatar>{step.icon}</StepAvatar>
+                    <Typography variant="h4" gutterBottom color="primary.dark">
+                      {step.title}
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                      {step.description}
+                    </Typography>
+                  </CardContent>
+                </StepCard>
+              </StepWrapper>
             </Grid>
           ))}
         </Grid>

@@ -37,7 +37,6 @@ const NavBar = ({ transparent = false }) => {
   const navItems = [
     { label: "Comment ça marche", href: "#how" },
     { label: "Témoignages", href: "#testimonials" },
-    { label: "FAQ", href: "#faq" },
   ];
 
   const scrollToSection = (href) => {
