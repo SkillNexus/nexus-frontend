@@ -69,6 +69,16 @@ const Login = () => {
           Inscrivez-vous
         </Link>
       </Typography>
+
+      <Button
+        variant="text"
+        color="primary"
+        fullWidth
+        sx={{ mt: 2 }}
+        onClick={() => navigate("/")}
+      >
+        Revenir à l'accueil
+      </Button>
     </AuthPaper>
   );
 };

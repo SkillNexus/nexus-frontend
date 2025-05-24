@@ -1,34 +1,31 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import GroupsIcon from "@mui/icons-material/Groups";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const HeroWrapper = styled(Box)(({ theme }) => ({
-  background: theme.palette.gradient.primary,
+const HeroWrapper = styled(Box)(() => ({
+  background: "linear-gradient(135deg, #1A47B8 0%, #2373CD 100%)",
   color: "white",
   minHeight: "100vh",
   display: "flex",
   alignItems: "center",
   position: "relative",
   overflow: "hidden",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'url("/api/placeholder/1920/1080") center/cover',
-    opacity: 0.1,
-  },
 }));
 
-const HeroContent = styled(Box)(({ theme }) => ({
+const HeroContent = styled(Box)(() => ({
   position: "relative",
   zIndex: 1,
 }));
+
+const HeroImage = styled("img")({
+  width: "100%",
+  aspectRatio: "1/1",
+  objectFit: "contain",
+  borderRadius: "16px",
+  transform: "rotate(15deg)",
+  backgroundColor: "white",
+});
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -37,22 +34,48 @@ const HeroSection = () => {
     <HeroWrapper>
       <Container maxWidth="lg">
         <HeroContent>
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+          <Grid
+            container
+            spacing={4}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Grid
+              item
+              xs={12}
+              md={7}
+              sx={{
+                textAlign: "left",
+                pr: { md: 4 },
+                zIndex: 1,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", md: "flex-start" },
+                justifyContent: "center",
+                minHeight: "60vh",
+              }}
+            >
               <Typography
                 variant="h1"
                 gutterBottom
                 sx={{
-                  fontWeight: "bold",
+                  fontWeight: "500",
                   mb: 3,
+                  fontSize: { xs: "2.5rem", md: "4.5rem" },
+                  lineHeight: 1.1,
+                  textAlign: { xs: "center", md: "left" },
                 }}
               >
                 Apprenez mieux
                 <Box
                   component="span"
-                  sx={{ color: "secondary.light", display: "block" }}
+                  sx={{
+                    color: "#4BB4F8",
+                    display: "block",
+                    fontSize: { xs: "2.5rem", md: "4.5rem" },
+                  }}
                 >
-                  ensemble
+                  Ensemble
                 </Box>
               </Typography>
 
@@ -62,11 +85,14 @@ const HeroSection = () => {
                   mb: 4,
                   opacity: 0.9,
                   fontWeight: 300,
+                  fontSize: { xs: "1.2rem", md: "1.4rem" },
+                  lineHeight: 1.6,
+                  maxWidth: "90%",
+                  textAlign: { xs: "center", md: "left" },
                 }}
               >
-                Trouvez des partenaires d'apprentissage, fixez des objectifs
-                communs et progressez plus efficacement grâce à
-                l'accountability.
+                Trouver des "mates" d'apprentissage, fixez des objectifs communs
+                et progressez plus efficacement grâce à l'accountability
               </Typography>
 
               <Button
@@ -79,26 +105,17 @@ const HeroSection = () => {
                   py: 1.5,
                   px: 4,
                   fontSize: "1.1rem",
+                  backgroundColor: "#FF5722",
+                  borderRadius: "8px",
+                  textTransform: "none",
+                  "&:hover": {
+                    backgroundColor: "#F4511E",
+                  },
+                  alignSelf: { xs: "center", md: "flex-start" },
                 }}
               >
                 Rejoindre Nexus
               </Button>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                sx={{
-                  height: { xs: 300, md: 400 },
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  borderRadius: 4,
-                  backdropFilter: "blur(10px)",
-                }}
-              >
-                <GroupsIcon sx={{ fontSize: 150, opacity: 0.5 }} />
-              </Box>
             </Grid>
           </Grid>
         </HeroContent>

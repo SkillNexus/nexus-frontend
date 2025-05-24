@@ -21,8 +21,8 @@ const Signup = () => {
   const { login } = useAuth();
 
   const handleSignup = async () => {
-    // Keycloak will handle the signup process
-    await login();
+    // Redirige vers le formulaire d'inscription Keycloak
+    await login(undefined, { screen: "register" });
   };
 
   return (
@@ -67,6 +67,16 @@ const Signup = () => {
           Connectez-vous
         </Link>
       </Typography>
+
+      <Button
+        variant="text"
+        color="primary"
+        fullWidth
+        sx={{ mt: 2 }}
+        onClick={() => navigate("/")}
+      >
+        Revenir à l'accueil
+      </Button>
     </AuthPaper>
   );
 };
